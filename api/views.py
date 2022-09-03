@@ -498,8 +498,8 @@ class Woman(viewsets.ModelViewSet):
 class UserList(generics.ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-  #  renderer_classes = [JSONRenderer]
-  #  renderer_classes = [BrowsableAPIRenderer]
+    # renderer_classes = [JSONRenderer]
+    # renderer_classes = [BrowsableAPIRenderer]
     filter_backends = [filters.SearchFilter]
     search_fields = ['username', 'id']
 

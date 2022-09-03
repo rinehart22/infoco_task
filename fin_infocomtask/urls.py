@@ -2,9 +2,9 @@
 from django.urls import path
 
 from .import views
+from rest_framework_swagger.renderers import OpenAPIRenderer, SwaggerUIRenderer
 
-
-
+# 
 urlpatterns = [
 
     path('employ/', views.all_employees, name='all_employees'),
@@ -20,5 +20,7 @@ urlpatterns = [
     #path('u/<str:pk>', views.update.as_view()),
 
     #path('task_read/<str:pk>', views.task_read, name='task_read'),
+   
+   
 
 ]

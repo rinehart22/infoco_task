@@ -20,10 +20,10 @@ router = routers.SimpleRouter()
 router.register(r'man', views.Man)
 
 
-schema_view = get_schema_view(
-    title='Example API',
-    renderer_classes=[OpenAPIRenderer],
-)
+# schema_view = get_schema_view(
+#     title='Example API',
+#     renderer_classes=[OpenAPIRenderer],
+# )
 
 
 urlpatterns = [
@@ -117,11 +117,11 @@ urlpatterns = [
     #   * Provide view name for use with `reverse()`.
 
 
-    path('openapi', get_schema_view(
-        title="frame",
-        description="API for all things …",
-        version="1.0.0",  url='',
-    ), name='openapi-schema'),
+    # path('openapi', get_schema_view(
+    #     title="frame",
+    #     description="API for all things …",
+    #     version="1.0.0",  url='',
+    # ), name='openapi-schema'),
 
 ]
 

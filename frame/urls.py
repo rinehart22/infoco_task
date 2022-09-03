@@ -28,8 +28,8 @@ urlpatterns = [
 
 
     path('', include('api.urls')),
-     path('f/', include('fin_infocomtask.urls')),
-    path('docs/', include_docs_urls(title='frame API')),
+    path('f/', include('fin_infocomtask.urls')),
+    #path('docs/', include_docs_urls(title='frame API')),
 
 ]
 # this is for logging in api  , if not mentioed this url cant see login button
