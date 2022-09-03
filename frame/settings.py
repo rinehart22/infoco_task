@@ -137,9 +137,8 @@ REST_FRAMEWORK = {
         #'rest_framework_simplejwt.authentication.JWTAuthentication',
     ]
 }
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
+MEDIA_URL= '/media/'
 
 # REST_FRAMEWORK={
 #     'DEFAULT_PERMISSION_CLASSES':('rest_framework.permissions.IsAuthenticated',),
