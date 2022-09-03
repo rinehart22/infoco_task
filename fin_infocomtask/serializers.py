@@ -20,7 +20,7 @@ class Base64ImageField(serializers.ImageField):
 			except TypeError:
 				self.fail('invail_image')
 
-			file_name = str(uuid.uuid4())[:12]
+			file_name = str(uuid.uuid4())#[:12]
 			file_extension = "jpg"
 			complate_file_name = "%s.%s" % (file_name, file_extension)
 			
