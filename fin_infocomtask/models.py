@@ -37,7 +37,9 @@ class Employee(models.Model):
        
         return '%s %s %s' % (self.name, self.email,self.gender)
 
-
+    def get_base64_encoded_image(photo):
+        with open(photo, "rb") as img_file:
+            return base64.b64encode(img_file.read()).decode('utf-8')
 
 
 

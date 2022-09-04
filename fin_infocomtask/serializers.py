@@ -19,6 +19,7 @@ class Base64ImageField(serializers.ImageField):
 				 # Try to decode the file. Return validation error if it fails.
 			try:
 				decoded_file = base64.b64decode(data)
+				# b64_string = base64.b64encode(img_file.read())
 				print(decoded_file,':::::::::::::::::::::::::::::::::::::::::;')
 
 			except TypeError:

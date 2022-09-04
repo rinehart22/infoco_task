@@ -8,7 +8,7 @@ from rest_framework.decorators import api_view
 
 # The @api_view decorator for working with function based views.
 @api_view(['GET'])
-def all_employees(request):
+def allEmployees(request):
 
     try:
         # getting queryset from the database
@@ -25,7 +25,7 @@ def all_employees(request):
 
 
 @api_view(['GET', 'DELETE'])
-def emp_del(request, pk):
+def employDeletion(request, pk):
     try:
         # retrieve one record from the database using id
         deletion_of_employe = Employee.objects.get(id=pk)
@@ -40,12 +40,12 @@ def emp_del(request, pk):
 
 
 @api_view(['GET'])
-def one_employe(request, pk):
+def oneEmploye(request, pk):
     # to prevent program to stop execution and handles exceptions
     try:
         # retrieve one record from the database using id if data was found
-        get_oneemploy = Employee.objects.get(id=pk)
-        serializer = EmployeeSerializer(get_oneemploy, many=False)
+        getOneEmploy = Employee.objects.get(id=pk)
+        serializer = EmployeeSerializer(getOneEmploy, many=False)
         return Response(serializer.data,
                         {'message': 'employee details found',
                          'success': 'true'},
@@ -59,7 +59,7 @@ def one_employe(request, pk):
 
 @api_view(['POST', 'GET'])
 # POST this method will send data to the database
-def employ_create(request):
+def employCreate(request):
     if request.method == 'POST':
 
         try:
@@ -101,17 +101,17 @@ def employ_create(request):
 
 @api_view(['PUT', 'GET'])
 # PuT this method creates a new resource or updates (substitutes) a representation of the target resource with the request payload
-def emp_update(request, pk):
+def employUpdate(request, pk):
     if request.method == 'PUT':
         try:
-            update_data = Employee.objects.get(id=pk)
+            updateData = Employee.objects.get(id=pk)
         except Exception:
             return Response({'message': 'employee not exist', 'success': 'false'}, status=status.HTTP_200_OK)
             # instance: it is an object which we get from database before updating
 
         try:
             serializer = EmployeeSerializer(
-                instance=update_data, data=request.data, many=False)
+                instance=updateData, data=request.data, many=False)
             print(serializer,'iiiiiiiiiiiiiiiiiiiiiii')
             if serializer.is_valid():
                 serializer.save()
@@ -129,8 +129,8 @@ def emp_update(request, pk):
         # to prevent program to stop execution and handles exceptions
         try:
             # retrieve one record from the database using id if data was found
-            get_oneemploy = Employee.objects.get(id=pk)
-            serializer = EmployeeSerializer(get_oneemploy, many=False)
+            getOneEmploy = Employee.objects.get(id=pk)
+            serializer = EmployeeSerializer(getOneEmploy, many=False)
             return Response(serializer.data,
                             )
             # status = status.HTTP_200_OK,)
